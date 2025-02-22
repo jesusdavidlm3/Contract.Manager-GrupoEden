@@ -1,20 +1,19 @@
 import axios from "axios";
 
-const apiAddress = "import.meta.env."
-
+const apiAddress: string = import.meta.env.VITE_BACK_ADDRESS
 
 export class httpMethods{
     constructor(){
 
     }
 
-    async get(endPoint, token, value){
+    async get(endPoint: string, token: string, value?: any){
         try{
             if(value){
-                let res = await axios.get(`${apiAddress}/${endPoint}/${value}`)
+                let res = await axios.get(`${apiAddress}/${endPoint}/${value}`, {headers: {'Authorization': `Bearer ${token}`}})
                 return res
             }else{
-                let res = await axios.get(`${apiAddress}/${endPoint}`)
+                let res = await axios.get(`${apiAddress}/${endPoint}`, {headers: {'Authorization': `Bearer ${token}`}})
                 return res
             }
         }catch(err){
@@ -22,13 +21,18 @@ export class httpMethods{
         }
     }
 
-    async post(endPoint, token, value){
+    async post(endPoint: string, token?: string, data?: any){
         try{
             if(token){
-                let res = await axios.post(`${apiAddress}/${endPoint}` )
-                return res
+                if(data){
+                    let res = await axios.post(`${apiAddress}/${endPoint}`, data, {headers: {'Authorization': `Bearer ${token}`}} )
+                    return res
+                }else{
+                    let res = await axios.post(`${apiAddress}/${endPoint}`, {headers: {'Authorization': `Bearer ${token}`}} )
+                    return res
+                }
             }else{
-                let res = await axios.post(`${apiAddress}/${endPoint}` )
+                let res = await axios.post(`${apiAddress}/${endPoint}`)
                 return res
             }
         }catch(err){
@@ -36,20 +40,45 @@ export class httpMethods{
         }
     }
 
-    // async put(endPoint, token, value){
-    //     try{
-    //         axios.put(`${apiAddress}/${endPoint}`)
+    async put(endPoint: string, token: string, data?: any){
+        try{
+            if(data){
+                let res = await axios.put(`${apiAddress}/${endPoint}`, data, {headers: {'Authorization': `Bearer ${token}`}})
+                return res
+            }else{
+                let res = await axios.put(`${apiAddress}/${endPoint}`, {headers: {'Authorization': `Bearer ${token}`}})
+                return res
+            }
+        }catch(err){
+            return err
+        }
+    }
 
-    //     }catch(err){
-    //         return err
-    //     }
-    // }
+    async patch(endPoint: string, token: string, data?: any){
+        try{
+            if(data){
+                let res = await axios.patch(`${apiAddress}/${endPoint}`, data, {headers: {'Authorization': `Bearer ${token}`}})
+                return res
+            }else{
+                let res = await axios.patch(`${apiAddress}/${endPoint}`, {headers: {'Authorization': `Bearer ${token}`}})
+                return res
+            }
+        }catch(err){
+            return err
+        }
+    }
 
-    // async patch(endPoint, token, value){
-    //     return axios.patch(`${apiAddress}/${endPoint}`)
-    // }
-
-    // async delete(endPoint, token, value){
-    //     return axios.delete(`${apiAddress}/${endPoint}`)
-    // }
+    async delete(endPoint: string, token: string, value?: any){
+        try{
+            if(value){
+                let res = await axios.delete(`${apiAddress}/${endPoint}/${value}`, {headers: {'Authorization': `Bearer ${token}`}})
+                return res
+            }else{
+                let res = await axios.delete(`${apiAddress}/${endPoint}`, {headers: {'Authorization': `Bearer ${token}`}})
+                return res
+            }
+        }catch(err){
+            return err
+        }
+    }
 }
