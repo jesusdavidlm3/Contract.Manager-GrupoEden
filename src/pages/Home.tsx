@@ -24,7 +24,7 @@ const SubServerSearch: React.FC = () => {
 
     return(
         <div className='SubServerSearch'>
-            <h1 className='title'>Archivo Digital</h1>
+            <h1 className='title'>ARCHIVO DIGITAL</h1>
             {showList.length == 0 ? (
                 <>    
                     <Skeleton active/>

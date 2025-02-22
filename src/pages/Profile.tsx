@@ -4,7 +4,7 @@ import { SettingOutlined, UserOutlined } from '@ant-design/icons'
 import { Divider, Skeleton } from "antd";
 import { buttonPanelIconStyle } from '../AntDIconStyles'
 import { useNavigate } from 'react-router-dom'
-
+import defaultProfilePic from "../img/defaultProfilePic.png"
 
 const Profile = () => {
 
@@ -38,7 +38,7 @@ const Profile = () => {
                             {/* { userData.img == null ? (
                                 <UserOutlined style={{fontSize: '225px', color: '#6f8fc2'}}/>
                             ):( */}
-                                <img />
+                                <img src={defaultProfilePic} alt={defaultProfilePic} />
                             {/* // )  } */}
                             
                         </div>
@@ -70,7 +70,7 @@ const Profile = () => {
                     </div> */}
 
                     <div className='SubServersSection'>
-                        <h1 className='title'>Reportes por agencia</h1>
+                        <h1 className='title'>PROYECCIONES POR AGENCIA</h1>
                         <div className='subServerContainer'>
                             {/* { subServers.map((item) => (
                                 <div className='itemSubServer' key={item.id} onClick={() => {setCurrentSubServer(item.id); navigate('/SubServer')}}>

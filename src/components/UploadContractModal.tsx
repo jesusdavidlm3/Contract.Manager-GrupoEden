@@ -27,9 +27,9 @@ export const UploadContractModal: React.FC<uploadContractModal> = ({client, onCa
                 >
                     <h1>Jesus Lozano</h1>
                     <div className="Buttons">
-                        <Button className="Button">Guardar</Button>
-                        <Button className="Button">Imprimir</Button>
-                        <Button className="Button">Recibos</Button>
+                        <Button className="Button">GUARDAR</Button>
+                        <Button className="Button">IMPRIMIR</Button>
+                        <Button className="Button">RECIBOS</Button>
                     </div>
                     <div className="form">
                         <Input className="in" placeholder="Cedula" />
@@ -43,7 +43,7 @@ export const UploadContractModal: React.FC<uploadContractModal> = ({client, onCa
                     <Dragger className="dragger">
                         <PlusCircleOutlined style={{color: "#e7e14f", fontSize: "40px"}} />
                     </Dragger>
-                    <Button className="Button">Guardar</Button>
+                    <Button className="Button">SUBIR</Button>
                 </motion.div>
             </div>}
         </AnimatePresence>

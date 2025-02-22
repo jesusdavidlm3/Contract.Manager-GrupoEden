@@ -484,8 +484,10 @@ body{
     align-items: center;
     .bar{
         display: flex;
-        flex-direction: row;
-        .titles{font-size:40 px; margin: 20px 5px; color: var(--highlightColor);}
+        flex-direction: column;
+        align-items: center;
+        margin: 25px 0;
+        .titles{font-size: 70px; margin: 0 5px; color: white;}
     }
     .card{
         background-color: var(--moduleBgColor);
@@ -498,10 +500,6 @@ body{
         padding: 20px;
         margin: 0px;
 
-        h2{
-            font-weight: 400;
-        }
-
         .settingBar{
             align-self: flex-end;
         }
@@ -509,10 +507,14 @@ body{
         .picContainer{
             display: flex;
             align-items: start;
+
+            img{
+                width: 300px;
+            }
         }
 
         h2{
-            color: var(--notifPanelColorLetter);
+            color: var(--midGreen);
         }
     }
 
@@ -572,7 +574,8 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
-        .title{color: var(--highlightColor);}
+        width: 80%;
+        .title{color: var(--yellow); align-self: start;}
 
 
         .subServerContainer{
@@ -973,6 +976,10 @@ body{
             .rejected{color: var(--newColor); font-weight: 600; font-size: 16px;}
         }
     }
+}
+
+.Statistics{
+    @include pages;
 }
 
 .modalMask{

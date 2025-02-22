@@ -7,6 +7,7 @@ import ErrorPage from './pages/ErrorPage'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Profile from './pages/Profile'
+import Statistic from 'antd/es/statistic/Statistic'
 
   const router = createBrowserRouter([{
     path: "/",
@@ -16,11 +17,14 @@ import Profile from './pages/Profile'
       path: "/login",
       element: <Login />
     },{
-      path: "home",
+      path: "/home",
       element: <Home />
     },{
       path: "/Profile",
       element: <Profile />
+    },{
+      path: "/Statistics",
+      element: <Statistic />
     }]
   }])
 
